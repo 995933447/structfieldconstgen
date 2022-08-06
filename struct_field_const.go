@@ -67,8 +67,7 @@ func StructFieldsToConsts(findPkgPath, structName string, constPrefix, constSuff
 }
 
 func findFieldsForTransConst(findPkgPath string, structName string) ([]string, error) {
-	fset := token.NewFileSet()
-	pkgMap, err := parser.ParseDir(fset, findPkgPath, func(info fs.FileInfo) bool {
+	pkgMap, err := parser.ParseDir(token.NewFileSet(), findPkgPath, func(info fs.FileInfo) bool {
 		return !strings.Contains(info.Name(), "_test.go")
 	}, 0)
 	if err != nil {
