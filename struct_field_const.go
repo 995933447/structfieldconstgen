@@ -114,7 +114,6 @@ func findFieldsForTransConst(findPkgPath string, structName string) ([]string, e
 					if field.Names == nil {
 						continue
 					}
-
 					for _, fieldIdent := range field.Names {
 						if _, ok = existFieldNameMap[fieldIdent.Name]; ok {
 							continue
