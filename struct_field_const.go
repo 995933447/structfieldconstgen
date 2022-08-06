@@ -55,7 +55,7 @@ func structFieldsToConsts(findPkgPath, structName string, constPrefix, constSuff
 	if err != nil {
 		return err
 	}
-	fp, err := os.OpenFile(outFile, os.O_WRONLY|os.O_CREATE, 7555)
+	fp, err := os.OpenFile(outFile, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 7555)
 	if err != nil {
 		return err
 	}
