@@ -12,7 +12,7 @@ func main() {
 	constPrefix := scan.OptStrDefault("prefix", "")
 	constSuffix := scan.OptStrDefault("suffix", "")
 	transStructFieldConstValFucName := scan.OptStrDefault("func", "snake")
-	err := StructFieldsToConsts(findPkgPath, structName, constPrefix, constSuffix, getTransFieldConstValFuncByName(transStructFieldConstValFucName), outFile)
+	err := structFieldsToConsts(findPkgPath, structName, constPrefix, constSuffix, getTransFieldConstValFuncByName(transStructFieldConstValFucName), outFile)
 	if err != nil {
 		panic(err)
 	}

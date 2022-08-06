@@ -27,7 +27,7 @@ type (
 	}
 )
 
-func StructFieldsToConsts(findPkgPath, structName string, constPrefix, constSuffix string, transConstValHandler transStructFieldConstValFunc, outFile string) error {
+func structFieldsToConsts(findPkgPath, structName string, constPrefix, constSuffix string, transConstValHandler transStructFieldConstValFunc, outFile string) error {
 	fieldNames, err := findFieldsForTransConst(findPkgPath, structName)
 	if err != nil {
 		return err
