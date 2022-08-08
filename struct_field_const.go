@@ -86,6 +86,10 @@ func findFieldsForTransConst(findPkgPath string, structName string) ([]string, e
 					continue
 				}
 
+				if genDeclNode.Tok != token.TYPE {
+					continue
+				}
+
 				var typeSpec *ast.TypeSpec
 				for _, spec := range genDeclNode.Specs {
 					if typeSpec, ok = spec.(*ast.TypeSpec); ok {
